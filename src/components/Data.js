@@ -3,7 +3,7 @@ import "./Right.css";
 
 function Right() {
     return (
-        <div clas>
+        <div class>
 
         </div>
     );
