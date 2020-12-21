@@ -1,0 +1,23 @@
+.main{
+  background-image: linear-gradient(to right, #cc6600,#ff9900);
+  min-height: 100vh;
+  padding: 5rem;
+}
+.app{
+  height: 90vh;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr;
+  border: solid black 1px;
+}
+.left,.right{
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.container{
+  height: 100%;
+  width: 100%;
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: saturate(180%) blur(10px); 
+}
