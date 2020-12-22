@@ -9,22 +9,28 @@ const backgroundPic = {backgroundImage: `url(${sunny})`}
 const backgroundPic1 = {backgroundImage: `url(${sunny1})`}
 
 class App extends React.Component {
-  state = { weather:""};
+  state = { temp:"",city:"",weather:"",tempMin:"",tempMax:"",humidity:"",wind:""};
   
-  componentDidMount(){
+  //default query parameter
+  componentDidMount(){  
     this.onSubmit("london");
   }
   
+  //ajax call
   onSubmit = async search=> {
     const response = await weather.get("",{params:{q:search}});
-    console.log(response);
-    console.log(response.data);
-    console.log(response.data.weather)
-    console.log(response.data.weather[0].main)
+
+    //fetching data from ajax call
     this.setState({
-      weather:response.data.weather[0].main
+      temp:response.data.main.temp,
+      tempMin:response.data.main.temp_min,
+      tempMax:response.data.main.temp_max,
+      city:response.data.name,
+      weather:response.data.weather[0].main,
+      wind:response.data.wind.speed,
+      humidity:response.data.main.humidity
     });
-    console.log(this.state.weather)
+
   }
 
   render() {
@@ -32,12 +38,22 @@ class App extends React.Component {
       <section className="main">
         <div className="app">
           <div className="left" style={backgroundPic}>
-            
+            <div className="left-container">
+              <span>{this.state.temp}&#8451;</span>
+              <span>{this.state.weather}</span>
+              <span>{this.state.city}</span>
+            </div>
           </div>
           <div className="right" style={backgroundPic1}>
-            <div className="container">
+            <div className="right-container">
               <Searchbar onFormSubmit={this.onSubmit}/>
-              <h1>{this.state.weather}</h1>
+              <div className="details">
+                <h1>Weather Details</h1>
+                <span>{this.state.tempMin}&#8451;</span>
+                <span>{this.state.tempMax}&#8451;</span>
+                <span>{this.state.wind} km/h</span>
+                <span>{this.state.humidity}%</span>
+              </div>
             </div>
           </div>
         </div>
