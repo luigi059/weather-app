@@ -7,7 +7,8 @@ function Searchbar(props) {
         setSearch(event.target.value);
     }
     function onFormSubmit(event) {
-        event.preventDefault();   
+        event.preventDefault();
+        console.log("wow");   
         props.onFormSubmit(search)
     }
     return(

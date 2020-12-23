@@ -3,6 +3,7 @@ import weather from "./api/weather";
 import MainData from "./components/MainData";
 import SubData from "./components/SubData";
 import Searchbar from "./components/SearchBar";
+import Location from "./components/Locations";
 import './App.css';
 import sunny1 from "./images/sunny1.jpg"
 import sunny from "./images/sunny.jpg"
@@ -11,18 +12,14 @@ const backgroundPic = {backgroundImage: `url(${sunny})`}
 const backgroundPic1 = {backgroundImage: `url(${sunny1})`}
 
 class App extends React.Component {
-  constructor(props){
-    super(props);
-    this.state = {temp:"",tempMin:"",tempMax:"",city:"",weather:"",wind:"",humidity:"",search:""};
-  }
-  
+  state={temp:"",tempMin:"",tempMax:"",city:"",weather:"",wind:"",humidity:"",search:""}
   //default query parameter
   componentDidMount(){  
     this.onSubmit("london");
   }
-
+  //ajax call
   onSubmit = async (search)=> {
-    console.log(this.state.search);
+    console.log("im called")
       const response = await weather.get("",{params:{q:search}});
       //fetching data from ajax call
       this.setState({
@@ -48,6 +45,7 @@ class App extends React.Component {
           <div className="right" style={backgroundPic1}>
             <div className="right-container">
               <Searchbar onFormSubmit={this.onSubmit}/>
+              <Location onClick={this.onSubmit}/>
               <SubData 
               tempMin={this.state.tempMin}
               tempMax={this.state.tempMax}
