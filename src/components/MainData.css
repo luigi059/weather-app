@@ -1,0 +1,6 @@
+.main-data{
+    display: inline-flex; 
+    background: rgba(0,0,0,0.8);
+    backdrop-filter: blur(10px); 
+    border: 1px solid purple;
+}
