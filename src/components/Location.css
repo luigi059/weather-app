@@ -1,0 +1,18 @@
+.locations {
+  margin-left: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+}
+.locations-text {
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  font-weight: 100;
+  opacity: 0.6;
+  margin: 1rem 0;
+}
+.locations-text:hover {
+  cursor: pointer;
+  opacity: 1;
+}

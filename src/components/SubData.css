@@ -1,3 +1,18 @@
-.sub-data{
-    
+.sub-data {
+  margin: 0 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+}
+.sub-data-container {
+  display: flex;
+  justify-content: space-between;
+}
+.sub-text {
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  font-weight: 100;
+  opacity: 0.6;
+  margin: 1rem 0;
 }

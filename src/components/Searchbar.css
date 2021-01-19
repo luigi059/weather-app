@@ -1,0 +1,38 @@
+input,
+textarea {
+  outline: none;
+  border: none;
+}
+input:focus,
+textarea:focus {
+  border-color: transparent !important;
+}
+input:focus::-webkit-input-placeholder,
+textarea:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  font-size: 2rem;
+}
+.search {
+  padding-top: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.input {
+  font-size: 2rem;
+  color: #fff;
+  line-height: 1.2;
+
+  display: block;
+  width: 100%;
+  margin: 0 5rem;
+  height: 5rem;
+  background: transparent;
+}
