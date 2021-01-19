@@ -1,4 +1,5 @@
 import React from "react";
+import API from "./api/api";
 import MainData from "./components/MainData";
 import SubData from "./components/SubData";
 import Searchbar from "./components/SearchBar";
@@ -28,7 +29,13 @@ class App extends React.Component {
   //ajax call
   onSubmit = async (search) => {
     console.log("im called");
-    const response = await weather.get("", { params: { q: search } });
+    const response = await API.get("/data/2.5/weather?", {
+      params: {
+        q: search,
+        units: "metric",
+        APPID: "386391286837045622a26eff0fb80b93",
+      },
+    });
     //fetching data from ajax call
     this.setState({
       temp: response.data.main.temp,
@@ -48,14 +55,14 @@ class App extends React.Component {
             <h1 className="title">the.weather</h1>
             <MainData
               temp={this.state.temp}
-              weather={this.state.weather}
               city={this.state.city}
+              weather={this.state.weather}
             />
           </div>
           <div className="right" style={backgroundPic1}>
             <div className="right-container">
               <Searchbar onFormSubmit={this.onSubmit} />
-              <hr></hr>
+              <hr className="search-line"></hr>
               <Location onClick={this.onSubmit} />
               <hr></hr>
               <SubData

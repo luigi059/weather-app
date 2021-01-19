@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./SearchBar.css";
+import img from "../images/search.png";
 
 function Searchbar(props) {
   const [search, setSearch] = useState("");
@@ -8,9 +9,10 @@ function Searchbar(props) {
   }
   function onFormSubmit(event) {
     event.preventDefault();
-    console.log("wow");
+    console.log(search);
     props.onFormSubmit(search);
   }
+
   return (
     <form onSubmit={onFormSubmit}>
       <div className="search">
@@ -18,11 +20,13 @@ function Searchbar(props) {
           className="input"
           type="text"
           placeholder="Search City..."
-          value={props.search}
+          value={search}
           onChange={onInputChange}
         />
+        <button className="submit" type="submit">
+          <img src={img} alt="search" className="search-img"></img>
+        </button>
       </div>
-      <hr></hr>
     </form>
   );
 }

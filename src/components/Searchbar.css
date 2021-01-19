@@ -19,11 +19,12 @@ textarea::-webkit-input-placeholder {
   font-size: 2rem;
 }
 .search {
-  padding-top: 2.5rem;
+  padding-top: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
+  position: relative;
 }
 .input {
   font-size: 2rem;
@@ -33,6 +34,34 @@ textarea::-webkit-input-placeholder {
   display: block;
   width: 100%;
   margin: 0 5rem;
-  height: 5rem;
+  height: 4rem;
   background: transparent;
+}
+.submit {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 6rem;
+  height: 5.4rem;
+  background: #cc6600;
+  vertical-align: middle;
+  border: none;
+  outline: none;
+}
+.submit:hover {
+  cursor: pointer;
+}
+.search-img {
+  display: block;
+  margin: 1rem auto;
+  width: 50%;
+  height: 3rem;
+}
+.search-line {
+  border: 0;
+  height: 0;
+  margin-left: 10%;
+  margin-right: 10rem;
+  border-top: 2px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
 }
