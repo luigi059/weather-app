@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./SearchBar.css";
+import "./Searchbar.css";
 import img from "../images/search.png";
 
 function Searchbar(props) {

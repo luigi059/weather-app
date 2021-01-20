@@ -2,7 +2,7 @@ import React from "react";
 import API from "./api/api";
 import MainData from "./components/MainData";
 import SubData from "./components/SubData";
-import Searchbar from "./components/SearchBar";
+import Searchbar from "./components/Searchbar";
 import Location from "./components/Locations";
 import "./App.css";
 import side from "./images/side.jpg";
